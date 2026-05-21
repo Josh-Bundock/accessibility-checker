@@ -47,7 +47,7 @@ def check_images(soup: BeautifulSoup) -> list[Issue]:
                     criterion_name="Non-text Content",
                     level="A",
                     severity="warning",
-                    title="Image with empty alt — review if decorative",
+                    title="Image with empty alt, review if decorative",
                     description=(
                         "This image has alt=\"\" but is not marked as "
                         "role=\"presentation\", aria-hidden=\"true\", or inside a "

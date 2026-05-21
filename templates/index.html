@@ -358,7 +358,7 @@
   <div class="container">
     <header>
       <h1>Accessibility Checker</h1>
-      <p>Automated WCAG 2.1 checks — high-confidence results only, no false positives.</p>
+      <p>Automated WCAG 2.1/2.2 checks</p>
     </header>
 
     <div class="search-card">
@@ -385,7 +385,7 @@
 
       <div class="js-warning" id="js-warning">
         <strong>&#9888; This page appears to use client-side rendering (React, Vue, Angular, etc.)</strong>
-        <p>The checker fetches raw HTML — it cannot see content that JavaScript builds after page load.
+        <p>The checker fetches raw HTML, it cannot see content that JavaScript builds after page load.
            Results below only reflect what was in the initial HTML response.
            Automated checks are likely incomplete. Use a browser-based tool such as
            axe DevTools or Chrome Lighthouse for a full audit of this site.</p>
@@ -438,7 +438,7 @@
         if (data.error) { showError(data.error); return; }
         renderResults(data);
       } catch (e) {
-        showError('Network error — could not reach the checker. Is the server running?');
+        showError('Network error, could not reach the checker. Is the server running?');
       } finally {
         setLoading(false);
       }
@@ -475,7 +475,7 @@
       const section = document.getElementById('automated-section');
       section.innerHTML = '';
       if (data.issues.length === 0) {
-        section.innerHTML = `<div class="pass-state">&#10003; All automated checks passed — no issues detected.</div>`;
+        section.innerHTML = `<div class="pass-state">&#10003; All automated checks passed, no issues detected.</div>`;
       } else {
         let html = `<div class="section-title">&#9888; Automated findings</div><div class="issue-list">`;
         data.issues.forEach((issue, i) => {
